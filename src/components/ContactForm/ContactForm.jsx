@@ -2,7 +2,7 @@ import { Formik, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { StyledForm, StyledInput } from './ContactForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/operations';
+import { addContact } from 'redux/contacts/operations';
 
 const schema = Yup.object().shape({
   name: Yup.string().required('Required'),

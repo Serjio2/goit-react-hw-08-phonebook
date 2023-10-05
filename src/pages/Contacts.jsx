@@ -1,27 +1,25 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Helmet } from 'react-helmet';
-import { TaskList } from 'components/TaskList/TaskList';
-import { TaskEditor } from 'components/TaskEditor/TaskEditor';
-import { fetchTasks } from 'redux/tasks/operations';
-import { selectLoading } from 'redux/tasks/selectors';
+import { selectIsLoggedIn } from 'redux/auth/selectors';
+import { getContacts } from 'redux/contacts/operations';
 
-export default function Tasks() {
+const Contacts = () => {
   const dispatch = useDispatch();
-  const isLoading = useSelector(selectLoading);
+  const isLoading = useSelector(selectIsLoggedIn);
 
   useEffect(() => {
-    dispatch(fetchTasks());
+    dispatch(getContacts());
   }, [dispatch]);
 
   return (
     <>
-      <Helmet>
-        <title>Your tasks</title>
-      </Helmet>
-      <TaskEditor />
+      {/* <Helmet> */}
+      <title>Your tasks</title>
+      {/* </Helmet> */}
+      {/* <TaskEditor /> */}
       <div>{isLoading && 'Request in progress...'}</div>
-      <TaskList />
+      {/* <TaskList /> */}
     </>
   );
-}
+};
+export default Contacts;

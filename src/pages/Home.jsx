@@ -1,12 +1,10 @@
-export default function Home() {
+ const Home = () => {
     return (
       <div>
         <h1>
-          Task manager welcome page{' '}
-          <span role="img" aria-label="Greeting icon">
-            💁‍♀️
-          </span>
+        Welcome to Phone Book.
         </h1>
       </div>
     );
   }
+  export default Home;
