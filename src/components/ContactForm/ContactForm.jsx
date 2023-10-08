@@ -6,12 +6,12 @@ import { addContact } from 'redux/contacts/operations';
 
 const schema = Yup.object().shape({
   name: Yup.string().required('Required'),
-  phone: Yup.string().required('Required'),
+  number: Yup.string().required('Required'),
 });
 
 const initialValues = {
   name: '',
-  phone: '',
+  number: '',
 };
 
 export const ContactForm = () => {
@@ -23,8 +23,8 @@ export const ContactForm = () => {
       return alert(`${value.name} is already in contacts`);
     }
     
-    if (allcontacts.find(contact => contact.phone === value.phone)) {
-      return alert(`${value.phone} is already in contacts`);
+    if (allcontacts.find(contact => contact.number === value.number)) {
+      return alert(`${value.number} is already in contacts`);
     }
 
     dispatch(addContact({ ...value}));
@@ -45,8 +45,8 @@ export const ContactForm = () => {
 
         <label>
           <p>Number:</p>
-          <StyledInput type="tel" name="phone" placeholder="Input number" />
-          <ErrorMessage name="phone" component="span" />
+          <StyledInput type="tel" name="number" placeholder="Input number" />
+          <ErrorMessage name="number" component="span" />
         </label>
 
         <button type="submit">Add contact</button>
