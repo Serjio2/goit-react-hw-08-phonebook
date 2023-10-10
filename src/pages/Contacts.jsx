@@ -3,12 +3,13 @@ import { ContactList } from 'components/ContactList/ContactList';
 import { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectIsLoggedIn } from 'redux/auth/selectors';
+import { selectLoading } from 'redux/contacts/selectors';
 import { getContacts } from 'redux/contacts/operations';
+import { Filter } from 'components/Filter/Filter';
 
 const Contacts = () => {
   const dispatch = useDispatch();
-  const isLoading = useSelector(selectIsLoggedIn);
+  const isLoading = useSelector(selectLoading);
 
   useEffect(() => {
     dispatch(getContacts());
@@ -21,6 +22,7 @@ const Contacts = () => {
       </Helmet>
       <ContactForm />
       <div>{isLoading && 'Request in progress...'}</div>
+      <Filter/>
       <ContactList />
     </>
   );
