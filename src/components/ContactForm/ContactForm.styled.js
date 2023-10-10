@@ -8,6 +8,7 @@ export const StyledForm = styled(Form)`
   padding: 20px;
   border: 2px solid black;
   border-radius: 5px;
+  /* text-align: center; */
 
   p {
     margin-bottom: 5px;
@@ -21,11 +22,19 @@ export const StyledForm = styled(Form)`
     color: red;
     margin-left: 5px;
   }
+`;
 
-  button {
-    width: 120px;
-    margin: 15px auto;
-  }
+export const Button = styled.button`
+
+  display: flex;
+  align-items: center;
+  width: 150px;
+  margin: 15px auto;
+  padding: 20px 30px;
+  color: #000000;
+  background-color: #ffffff;
+  border-radius: 14px;
+  cursor: pointer;
 `;
 
 export const StyledInput = styled(Field)`

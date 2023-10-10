@@ -1,10 +1,12 @@
+import { HomePageStyled } from "./Home.styled";
+
  const Home = () => {
     return (
-      <div>
+      <HomePageStyled>
         <h1>
         Welcome to Phone Book.
         </h1>
-      </div>
+      </HomePageStyled>
     );
   }
   export default Home;
